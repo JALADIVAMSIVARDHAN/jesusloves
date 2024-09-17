@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  .jesus-text {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #333;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+        background-color: #4CAF50; /* Updated background color */
+        color: white;
+        padding: 20px;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+        font-size: 24px; /* Adjust font size */
+        text-transform: uppercase; /* Convert text to uppercase */
+        letter-spacing: 2px; /* Add letter spacing */
+        border-bottom: 2px solid #fff;
+        position: relative; /* Position for absolute elements */
+        overflow: hidden; /* Hide overflow for animations */
+    }
+
+    /* Animation for header */
+    @keyframes slideIn {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    /* Apply animation to header */
+    header {
+        animation: slideIn 1s ease-out; /* Slide in animation */
+    }
+
+    /* Animation for border */
+    @keyframes borderAnimation {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    /* Style for border animation */
+    header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        animation: borderAnimation 1s ease-out forwards; /* Border animation */
+    }
+  nav {
+    background-color: #f4f4f4;
+    padding: 10px;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+  }
+  .highlight {
+    background-color: yellow;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to next line */
+  }
+  .content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    min-width: 250px; /* Ensure content doesn't collapse on small screens */
+    margin-left: 1in;
+    margin-right: 1in;
+  }
+  .content p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+  }
+  .content h2 {
+    font-family: 'Georgia', serif;
+    font-size: 40px;
+  }
+  .image {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    min-width: 250px; /* Ensure content doesn't collapse on small screens */
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    margin-left: 1in; /* Add one inch space to the left */
+    margin-right: 1in;
+  }
+  .image img {
+    max-width: 100%; /* Ensure images don't overflow container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .showsp {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 1in; /* Add one inch space to the left */
+    margin-right: 1in;
+  }
+  .jesusgrace {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to next line */
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  .image-containers {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    max-width: 300px; /* Set maximum width for better arrangement */
+  }
+  .image-containers img {
+    display: block;
+    width: 100%; /* Adjust image width to fill container */
+    height: auto;
+    object-fit: cover;
+  }
+  .image-containers p {
+    margin: 10px auto; /* Center the text */
+    max-height: 100px; /* Limit the height of the paragraph */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .read-more {
+    text-decoration: none;
+    color: blue;
+    display: block;
+  }
+
+   .menu-section {
+    background-color:#ffcc00;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  nav ul li a {
+    text-decoration: none;
+     color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #ffcc00;
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .content h2 {
+      font-size: 30px; /* Adjusted font size for smaller screens */
+    }
+    .content p {
+      font-size: 20px; /* Adjusted font size for smaller screens */
+    }
+    .image-containers {
+      width: 90%; /* Adjusted width for better fit on small screens */
+    }
+  .image {
+        margin-left: 1in; /* Add one inch space to the left */
+        margin-right: 1in; /* Add one inch space to the right */
+    }
+    .showsp {
+        margin-left: 10px; /* Adjust left margin for mobile */
+        margin-right: 10px; /* Adjust right margin for mobile */
+    }
+   .image {
+        margin-left: initial; /* Reset left margin for mobile */
+        margin-right: initial; /* Reset right margin for mobile */
+    }
+   .content {
+        margin-left: initial; /* Reset left margin for mobile */
+        margin-right: initial; /* Reset right margin for mobile */
+    }
+
+  }
+
+
+
+/* Media query for screens up to 767px */
+@media screen and (max-width: 600px) {
+    .footer-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-bottom: 20px; /* Add spacing between footer columns */
+    }
+}
+
+
+       .footer {
+            background: #151515;
+            color: #eee;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+
+        .footer h3,
+        .footer h2 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .footer-text p,
+        .contact-info p {
+            color: #808080;
+            line-height: 1.8em;
+            letter-spacing: 1px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #707070;
+            margin: 8px 0;
+        }
+
+        .footer-grid:nth-child(2) {
+            border-left: 1px solid #1b1b1b;
+            border-right: 1px solid #1b1b1b;
+        }
+
+        .footer ul li.hd {
+            color: #34bf49;
+        }
+
+        .footer-text input[type="email"] {
+            padding: 12px 15px;
+            color: #fff;
+            font-size: 13px;
+            width: 85%;
+            border: none;
+            background: none;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .footer-title a i {
+            font-size: 1em;
+            width: 55px;
+            height: 55px;
+            background: #047ffc;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.69);
+        }
+
+        .footer-title a {
+            font-size: 33px;
+            text-transform: capitalize;
+            font-weight: 600;
+            color: #eee;
+        }
+
+        .footer-top .footer-grid {
+            padding: 0 15px;
+        }
+
+        .footer-top .footer-grid p {
+            margin: 0;
+        }
+
+        /* CSS for row-wise alignment */
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-col {
+            flex-basis: calc(25% - 20px);
+        }
+
+        /* Copyright Styles */
+        .copyright {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .copyright p {
+            margin: 0;
+        }
+
+        /* Custom Styles */
+        .footer-text ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .footer-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-text ul li a {
+            text-decoration: none;
+            color: #808080;
+        }
+</style>
+</head>
+<body>
+
+<header>
+     Yesu Prema
+</header>
+<nav>
+    <ul>
+        <li><a href="text.html">Home</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<center><h2>Trinity</h2></center>
+
+<div id="home" class="highlight">
+    <h1 style="font-size:20px">ఆదియందు వాక్యముండెను వాక్యము దేవుని యొద్ద ఉండెను వాక్యము దేవుడై యుండెను.</h1>
+    <!-- Leave space here for image attachment -->
+</div>
+
+<main>
+    <div class="content">
+        <h2>Torah (GENESIS 1:26)</h2>
+        <p>దేవుడు మన స్వరూపమందు మన పోలికె చొప్పున నరులను చేయుదము; వారుసముద్రపు చేపలను ఆకాశ పక్షులను పశువులను సమస్త భూమిని భూమిమీద ప్రాకు ప్రతి జంతువును ఏలుదురుగాకనియు పలికెను.</p>
+    </div>
+    <div class="image">
+        <img width="1000" src="fix1.png" alt="Image 1">
+    </div>
+</main>
+<div class="showsp">
+    <h4 style="font-family: georgia">Description above</h4>
+    <ul>
+        <li>Thou calledst in trouble, and I delivered thee; I answered thee in the secret place of thunder: I proved thee at the waters of Meribah</li>
+    </ul>
+</div>
+<main>
+    <div class="image">
+        <img src="fix2.png" alt="Image 2">
+    </div>
+    <div class="content">
+        <h2>Gospel (JOHN 14:10)</h2>
+        <p>Believest thou not that I am in the Father, and the Father in me? The words that I speak unto you I speak not of myself: but the Father that dwelleth in me, he doeth the works.</p>
+    </div>
+</main>
+<div class="showsp">
+    <h4 style="font-family: georgia">Description above</h4>
+    <ul>
+        <li>Thou calledst in trouble, and I delivered thee; I answered thee in the secret place of thunder: I proved thee at the waters of Meribah lsldglnkglgdndlgnklgsngsn</li>
+    </ul>
+</div>
+<main>
+    <div class="content">
+        <h2>Gospel (JOHN 3:16)</h2>
+        <p>దేవుడు లోకమును ఎంతో ప్రేమించెను. కాగా ఆయన తన అద్వితీయకుమారునిగా పుట్టిన వానియందు విశ్వాసముంచు ప్రతివాడును నశింపక నిత్యజీవము పొందునట్లు ఆయనను అనుగ్రహించెను.</p>
+    </div>
+    <div class="image">
+        <img src="fix3.png" alt="Image 1">
+    </div>
+</main>
+<div class="showsp">
+    <h4 style="font-family: georgia">Description above</h4>
+    <ul>
+        <li>Thou calledst in trouble, and I delivered thee; I answered thee in the secret place of thunder: I proved thee at the waters of Meribah</li>
+    </ul>
+</div>
+
+<section id="learn">
+    <div class="content">
+        <h2>Learn</h2>
+    </div>
+<div class="jesusgrace">
+    <div class="image-containers">
+        <img src="love.png" alt="Image 1">
+        <p>This is the informationnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
+        <a href="chapter1.html" class="read-more">Read more</a>
+    </div>
+    <div class="image-containers">
+        <img src="sat.png" alt="Image 2">
+        <p>This is the pagekl/entlbk,kvhcjx</p>
+        <a href="chapter2.html" class="read-more">Read more</a>
+    </div>
+    <div class="image-containers">
+        <img src="dir.png" alt="Image 3">
+        <p>This is the page</p>
+        <a href="chapter3.html" class="read-more">Read more</a>
+    </div>
+</div>
+  <div class="jesusgrace">
+    <div class="image-containers">
+        <img src="sam.png" alt="Image 1">
+        <p>This is the informationnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
+        <a href="chapter4.html" class="read-more">Read more</a>
+    </div>
+    <div class="image-containers">
+        <img src="san.png" alt="Image 2">
+        <p>This is the pagekl/entlbk,kvhcjx</p>
+        <a href="chapter5.html" class="read-more">Read more</a>
+    </div>
+    <div class="image-containers">
+        <img src="vis.png" alt="Image 3">
+        <p>This is the page</p>
+        <a href="chapter6.html" class="read-more">Read more</a>
+    </div>
+</div>
+
+<section id="about">
+    <div class="content">
+        <h2>About</h2>
+        <p>This is for Jesus</p>
+    </div>
+</section>
+
+
+<footer>
+<section class="footer footer_w3layouts_section_1its py-5">
+	<div class="container py-lg-4 py-3">
+		<div class="footer-top">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Address</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>Location : Pudiwada, Andhra pradesh, India</p>
+                        <p>Phone : 7675017932</p>
+                        <p>Email : <a href="mailto:vardhanjaladi@gmail.com">vardhanjaladi@gmail.com</a></p>
+                        <p>pin : 522268</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>About Us</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>Vivamus magna justo, laci niats eget consectetur sed, conval lis at tellus. Nulla quis lorem ipnt libero.
+                        Lorem ipsum dolor.</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Bible Topics</h3>
+                    </div>
+                    <div class="footer-text">
+                        <ul>
+                            <li><a href="chapter1.html">Chapter 1</a></li>
+                            <li><a href="chapter2.html">Chapter 2</a></li>
+                            <li><a href="chapter3.html">Chapter 3</a></li>
+                            <li><a href="chapter4.html">Chapter 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Newsletter</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>By subscribing to our mailing list you will always get latest news and updates from us and follow.</p>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</section>
+</footer>
+
+<!-- copyright -->
+<div class="copyright py-3 text-center">
+	<p>© 2024 Yesu Prema. All Rights Reserved</p>
+</div>
+
+<script>
+    // Smooth scrolling to anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

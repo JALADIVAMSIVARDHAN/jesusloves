@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+
+
+    @media screen and (max-width: 600px) {
+    header {
+        text-align: center; /* Center-align the header text */
+    }
+    nav ul {
+        display: block; /* Display menu items in a block */
+        text-align: center; /* Center-align menu items */
+    }
+    nav ul li {
+        display: block; /* Display menu items in a block */
+        margin-right: 0; /* Remove right margin for menu items */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-bottom: 20px; /* Add spacing between footer columns */
+    }
+}
+
+
+
+@media screen and (max-width: 991px) {
+  .about-content {
+      padding: 10px;
+      margin-left: 0; /* Reset left margin for small screens */
+      margin-right: 0; /* Reset right margin for small screens */
+  }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+}
+
+/* Media query for smartphones and smaller devices */
+@media screen and (max-width: 767px) {
+    .about-content {
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .about-text {
+        font-size: 13px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+        header {
+            background-color: #4CAF50; /* Updated background color */
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+            font-size: 24px; /* Adjust font size */
+            text-transform: uppercase; /* Convert text to uppercase */
+            letter-spacing: 2px; /* Add letter spacing */
+            border-bottom: 2px solid #fff;
+            position: relative; /* Position for absolute elements */
+            overflow: hidden; /* Hide overflow for animations */
+        }
+
+        /* Animation for header */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Apply animation to header */
+        header {
+            animation: slideIn 1s ease-out; /* Slide in animation */
+        }
+
+        /* Animation for border */
+        @keyframes borderAnimation {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Style for border animation */
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            animation: borderAnimation 1s ease-out forwards; /* Border animation */
+        }
+
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .about-content {
+      padding: 20px;
+      margin-left: 5%;
+         margin-right: 5%;
+  }
+
+  .section-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-align: center;
+  }
+
+  .about-text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+  }
+
+  .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+      background-color: #0056b3;
+  }
+
+
+        /* Footer Styles */
+        .footer {
+            background: #151515;
+            color: #eee;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+
+        .footer h3,
+        .footer h2 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .footer-text p,
+        .contact-info p {
+            color: #808080;
+            line-height: 1.8em;
+            letter-spacing: 1px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #707070;
+            margin: 8px 0;
+        }
+
+        .footer-grid:nth-child(2) {
+            border-left: 1px solid #1b1b1b;
+            border-right: 1px solid #1b1b1b;
+        }
+
+        .footer ul li.hd {
+            color: #34bf49;
+        }
+
+        .footer-text input[type="email"] {
+            padding: 12px 15px;
+            color: #fff;
+            font-size: 13px;
+            width: 85%;
+            border: none;
+            background: none;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .footer-title a i {
+            font-size: 1em;
+            width: 55px;
+            height: 55px;
+            background: #047ffc;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.69);
+        }
+
+        .footer-title a {
+            font-size: 33px;
+            text-transform: capitalize;
+            font-weight: 600;
+            color: #eee;
+        }
+
+        .footer-top .footer-grid {
+            padding: 0 15px;
+        }
+
+        .footer-top .footer-grid p {
+            margin: 0;
+        }
+
+        /* CSS for row-wise alignment */
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-col {
+            flex-basis: calc(25% - 20px);
+        }
+
+        /* Copyright Styles */
+        .copyright {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .copyright p {
+            margin: 0;
+        }
+
+        /* Custom Styles */
+        .footer-text ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .footer-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-text ul li a {
+            text-decoration: none;
+            color: #808080;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .jesus-loves {
+            background: #f4f4f4;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .jesus-loves h2 {
+            color: #4CAF50;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<header>
+    Yesu Prema
+</header>
+<nav>
+    <ul>
+        <li><a href="text.html">Home</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="about" class="about-section">
+  <div class="container">
+  <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="about-content">
+              <h2 class="section-title">Discover Your Spiritual Journey</h2>
+              <p class="about-text">Welcome to Yesu Prema, a sanctuary for spiritual seekers and believers alike. Our mission is to illuminate the path of spiritual enlightenment and empower individuals on their journey of faith.</p>
+              <p class="about-text">At Yesu Prema, we believe that spirituality transcends boundaries and connects us all in the divine embrace of love. Through a harmonious blend of ancient wisdom and modern insights, we strive to inspire and uplift souls to reach their highest potential.</p>
+              <p class="about-text">Join us as we embark on a transformative journey of self-discovery, guided by the timeless teachings of Christianity. Together, let us explore the depths of faith, cultivate inner peace, and radiate the light of love into the world.</p>
+              <a href="#subscribe" class="btn btn-primary">Subscribe Now</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+</section>
+<div class="col-lg-6">
+    <div class="container">
+        <div class="jesus-loves">
+            <h2 class="text-center">Jesus Loves</h2>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <section class="footer-top">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Address</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>Location : 1234 Lock, Charlotte, North Carolina, United States</p>
+                        <p>Phone : +12 534894364</p>
+                        <p>Email : <a href="mailto:info@example.com">info@example.com</a></p>
+                        <p>Fax : +12 534894364</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>About Us</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>Vivamus magna justo, laci niats eget consectetur sed, conval lis at tellus. Nulla quis lorem ipnt libero. Lorem ipsum dolor.</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Bible Topics</h3>
+                    </div>
+                    <div class="footer-text">
+                        <ul>
+                            <li><a href="chapter1.html">Chapter 1</a></li>
+                            <li><a href="chapter2.html">Chapter 2</a></li>
+                            <li><a href="chapter3.html">Chapter 3</a></li>
+                            <li><a href="chapter4.html">Chapter 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Newsletter</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>By subscribing to our mailing list you will always get the latest news and updates from us and follow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+<div class="copyright">
+    <div class="container">
+        <p>© 2024 Yesu Prema. All Rights Reserved</p>
+    </div>
+</div>
+</body>
+</html>

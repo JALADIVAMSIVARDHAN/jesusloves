@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+         .contact-info {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align:center;
+}
+
+
+ @media screen and (max-width: 600px) {
+    header {
+        text-align: center; /* Center-align the header text */
+    }
+    nav ul {
+        display: block; /* Display menu items in a block */
+        text-align: center; /* Center-align menu items */
+    }
+    nav ul li {
+        display: block; /* Display menu items in a block */
+        margin-right: 0; /* Remove right margin for menu items */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-bottom: 20px; /* Add spacing between footer columns */
+    }
+}
+
+
+
+         body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+        .contact {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            text-align: center;
+            margin-left: 2%; /* Adjust this value to change the width from both sides */
+            margin-right: 2%;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .contact label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contact input[type="text"],
+        .contact input[type="email"],
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact textarea {
+            resize: none;
+        }
+
+        .contact input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+
+    .footer {
+            background: #151515;
+            color: #eee;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+
+        .footer h3,
+        .footer h2 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .footer-text p,
+        .contact-info p {
+            color: #808080;
+            line-height: 1.8em;
+            letter-spacing: 1px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #707070;
+            margin: 8px 0;
+        }
+
+        .footer-grid:nth-child(2) {
+            border-left: 1px solid #1b1b1b;
+            border-right: 1px solid #1b1b1b;
+        }
+
+        .footer ul li.hd {
+            color: #34bf49;
+        }
+
+        .footer-text input[type="email"] {
+            padding: 12px 15px;
+            color: #fff;
+            font-size: 13px;
+            width: 85%;
+            border: none;
+            background: none;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .footer-title a i {
+            font-size: 1em;
+            width: 55px;
+            height: 55px;
+            background: #047ffc;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.69);
+        }
+
+        .footer-title a {
+            font-size: 33px;
+            text-transform: capitalize;
+            font-weight: 600;
+            color: #eee;
+        }
+
+        .footer-top .footer-grid {
+            padding: 0 15px;
+        }
+
+        .footer-top .footer-grid p {
+            margin: 0;
+        }
+
+        /* CSS for row-wise alignment */
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-col {
+            flex-basis: calc(25% - 20px);
+        }
+
+        /* Copyright Styles */
+        .copyright {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .copyright p {
+            margin: 0;
+        }
+
+        /* Custom Styles */
+        .footer-text ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .footer-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-text ul li a {
+            text-decoration: none;
+            color: #808080;
+        }
+
+
+    header {
+        background-color: #4CAF50; /* Updated background color */
+        color: white;
+        padding: 20px;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+        font-size: 24px; /* Adjust font size */
+        text-transform: uppercase; /* Convert text to uppercase */
+        letter-spacing: 2px; /* Add letter spacing */
+        border-bottom: 2px solid #fff;
+        position: relative; /* Position for absolute elements */
+        overflow: hidden; /* Hide overflow for animations */
+    }
+
+    /* Animation for header */
+    @keyframes slideIn {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    /* Apply animation to header */
+    header {
+        animation: slideIn 1s ease-out; /* Slide in animation */
+    }
+
+    /* Animation for border */
+    @keyframes borderAnimation {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    /* Style for border animation */
+    header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        animation: borderAnimation 1s ease-out forwards; /* Border animation */
+    }
+  nav {
+    background-color: #f4f4f4;
+    padding: 10px;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+  }
+    </style>
+</head>
+<body>
+   <header>
+     Yesu Prema
+</header>
+<nav>
+    <ul>
+        <li><a href="text.html">Home</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+   <p class="contact-info">Further details, please contact us</p>
+
+<div class="contact">
+    <h2>Contact Us</h2>
+    <form action="send_email.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<footer class="footer">
+    <section class="footer-top">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Address</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>Location : 1234 Lock, Charlotte, North Carolina, United States</p>
+                        <p>Phone : +12 534894364</p>
+                        <p>Email : <a href="mailto:info@example.com">info@example.com</a></p>
+                        <p>Fax : +12 534894364</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>About Us</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>Vivamus magna justo, laci niats eget consectetur sed, conval lis at tellus. Nulla quis lorem ipnt libero. Lorem ipsum dolor.</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Bible Topics</h3>
+                    </div>
+                    <div class="footer-text">
+                        <ul>
+                            <li><a href="chapter1.html">Chapter 1</a></li>
+                            <li><a href="chapter2.html">Chapter 2</a></li>
+                            <li><a href="chapter3.html">Chapter 3</a></li>
+                            <li><a href="chapter4.html">Chapter 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">
+                        <h3>Newsletter</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>By subscribing to our mailing list you will always get the latest news and updates from us and follow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+<div class="copyright">
+    <div class="container">
+        <p>© 2024 Yesu Prema. All Rights Reserved</p>
+    </div>
+</div>
+
+
+</body>
+</html>
